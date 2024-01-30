@@ -1,14 +1,20 @@
 cmake_minimum_required(VERSION 3.13)
 
-set(PROJECT_NAME first_opengl)
+set(PROJECT_NAME opengl_example)
 set(CMAKE_CXX_STANDARD 17)
 
-set(WINDOW_NAME "first opengl")
+set(WINDOW_NAME "OpenGL Example")
 set(WINDOW_WIDTH 960)
 set(WINDOW_HEIGHT 540)
 
 project(${PROJECT_NAME})
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(${PROJECT_NAME} 
+    src/main.cpp
+    src/common.cpp src/common.h
+    src/shader.cpp src/shader.h
+    src/program.cpp src/program.h
+    src/context.cpp src/context.h
+    )
 
 include(Dependency.cmake)
 
@@ -24,5 +30,4 @@ target_compile_definitions(${PROJECT_NAME} PUBLIC
     )
 
 # Dependency들이 먼저 build 될 수 있게 관계 설정
-
 add_dependencies(${PROJECT_NAME} ${DEP_LIST})

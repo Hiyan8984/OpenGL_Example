@@ -2,6 +2,7 @@
 include(ExternalProject)
 
 # Dependency 관련 변수 설정
+# PROJECT_BINARY_DIR 은 빌드 폴더를 의미, 정해져있는 값
 set(DEP_INSTALL_DIR ${PROJECT_BINARY_DIR}/install)
 set(DEP_INCLUDE_DIR ${DEP_INSTALL_DIR}/include)
 set(DEP_LIB_DIR ${DEP_INSTALL_DIR}/lib)
